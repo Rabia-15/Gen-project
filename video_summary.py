@@ -102,7 +102,7 @@ if youtube_url:
       st.markdown("### Video Summary:")
       st.markdown(summary)
 
-except Exception as e:
+   except Exception as e:
     st.error(f" Error:(e)")
 
 st.divider()
