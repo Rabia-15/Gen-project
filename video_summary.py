@@ -28,16 +28,16 @@ def download_youtube_video(youtube_url):
     ],
     capture_output=True,
     text=True
-)
-if result.returncode !=0:
-  raise RuntimeError(f"yt-dlp error:\n(result.stderr)")
+  )
+  if result.returncode !=0:
+    raise RuntimeError(f"yt-dlp error:\n(result.stderr)")
 
-downloaded_files = sorted(
-  os.listdir(videos_directory),
-  key=lambda x: os.path.getctime(os.path.join(videos_directory, x)),
-  reverse=True
-)
-return os.path.join(videos_directory, downloaded_files[0])
+  downloaded_files = sorted(
+    os.listdir(videos_directory),
+    key=lambda x: os.path.getctime(os.path.join(videos_directory, x)),
+    reverse=True
+  )
+  return os.path.join(videos_directory, downloaded_files[0])
 
 #Extract frames from the video
 def extract_frames(video_path, interval_seconds=5):
