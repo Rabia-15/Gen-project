@@ -109,7 +109,7 @@ if youtube_url:
 st.divider()
 
 #Handle uploaded local video
-uploaded_file = st.file_uploader("Or upload a avideo file:", type=["mp4", "avi", "mov", "mkv"])
+uploaded_file = st.file_uploader("Or upload a video file:", type=["mp4", "avi", "mov", "mkv"])
 
 if uploaded_file:
   with st.spinner("Processing uploaded video..."):
