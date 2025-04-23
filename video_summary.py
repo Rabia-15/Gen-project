@@ -130,7 +130,7 @@ if "summary" in st.session_state:
 with col1:
   if st.button(" Rewrite Summary Nicely"):
     with st.spinner("Rewriting summary...."):
-      rewritten = rewrite_summary(st.session_state["summary'])
+      rewritten = rewrite_summary(st.session_state["summary"])
       st.markdown("### Rewritten Summary:")
       st.markdown(rewritten)
 
