@@ -17,11 +17,11 @@ model = ChatGroq(
   model_name="meta-llma/llma-4-scout-17b-16e-instruct"
 )
 
-#Download YouTube video using yt-dip
+#Download YouTube video using yt-dlp
 def download_youtube_video(youtube_url):
   result = subprocess.run(
     [
-      "yt-dip",
+      "yt-dlp",
       "-f", "best[ext=mp4]",
       "-o", os.path.join(videos_directory, "%(title)s.%(ext)s"),
       youtube-url
@@ -30,7 +30,7 @@ def download_youtube_video(youtube_url):
     text=True
 )
 if result.returncode !=0:
-  false RuntimeError(f"yt-dip error:\n(result.stderr)")
+  false RuntimeError(f"yt-dlp error:\n(result.stderr)")
 
 downloaded_files = sorted(
   os.listdir(videos_directory),
