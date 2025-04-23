@@ -114,7 +114,7 @@ if uploaded_file:
   with st.spinner("Processing uploaded video..."):
     saved_path = os.path.join(videos_directory, uploaded_file.name)
     with open(saved_path, "wb")as f:
-      f write(uploaded_file.getbuffer())
+      f.write(uploaded_file.getbuffer())
 
   extract_frames(saved_path)
   summary = descirbe_video()
