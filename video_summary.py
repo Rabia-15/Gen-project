@@ -8,8 +8,8 @@ from langchain_groq import ChatGroq
 #Directories
 videos_directory = 'videos/'
 frames_directory = 'frames/'
-os.makedlrs(videos_directory, exist_ok=True)
-os.makedlrs(frames_directory, exist_ok=True)
+os.makedirs(videos_directory, exist_ok=True)
+os.makedirs(frames_directory, exist_ok=True)
 
 #Initialize Groq model
 model = ChatGroq(
