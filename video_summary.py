@@ -37,7 +37,7 @@ downloaded_files = sorted(
   key=lambda x: os.path.getctime(os.path.join(videos_directory, x)),
   reverse=True
 )
-return os.path.join(videos_directory, downlaod_files[0])
+return os.path.join(videos_directory, download_files[0])
 
 #Extract frames from the video
 def extract_frames(video_path, interval_seconds=5):
