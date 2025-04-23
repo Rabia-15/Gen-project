@@ -97,7 +97,7 @@ if youtube_url:
       video_path = download_youtube_video(youtube_url)
       extract_frames(video_path)
       summary = describe_video()
-      st.session_state["summary'] = summary
+      st.session_state["summary"] = summary
 
    st.markdown("### Video Summary:")
   st.markdown(summary)
