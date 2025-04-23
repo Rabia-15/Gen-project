@@ -86,7 +86,7 @@ def turn_into_story(summary):
 
 #streamlit UI
 st.title(" Rabia - YouTube/Uploaded Video Summarizer using Groq LLM")
-st.image("C:\Users\student\Pictures\Screenshots\teddy.png")
+st.image("Screenshot 2025-04-22 114510.png")
 
 youtube_url = st.text_input("Paste a YouTube video URL:", placeholder="https://www.youtube.com/watch?v=example")
 
@@ -101,6 +101,32 @@ if youtube_url:
 
    st.markdown("### Video Summary:")
   st.markdown(summary)
+
+except Exception as e:
+      st.error(f" Error:(E)")
+
+st.divider()
+
+#Handle uploaded local video
+uploaded_file = st.file_uploader("Or upload a avideo file:", type=["mp4", "avi", "mov", "mkv"])
+
+if uploaded_file:
+  with st.spinner("Processing uploaded video..."):
+    saved_path = os.path.join(videos_directory, uploaded_file.name)
+    with open(saved_path, "wb")as f:
+      f write(uploaded_file.getbuffer())
+
+  extract_frames(saved_path)
+  summary = descirbe_video()
+  st.session_state["summary"] = summary
+
+st.mardown("### Summary of uploaded Video:")
+st.markdown(summary)
+
+#Additional buttons to enhance the summary
+
+
+
 
       
 
