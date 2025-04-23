@@ -117,12 +117,12 @@ if uploaded_file:
     with open(saved_path, "wb")as f:
       f.write(uploaded_file.getbuffer())
 
-  extract_frames(saved_path)
-  summary = descirbe_video()
-  st.session_state["summary"] = summary
+    extract_frames(saved_path)
+    summary = descirbe_video()
+    st.session_state["summary"] = summary
 
-st.mardown("### Summary of uploaded Video:")
-st.markdown(summary)
+  st.mardown("### Summary of uploaded Video:")
+  st.markdown(summary)
 
 #Additional buttons to enhance the summary
 if "summary" in st.session_state:
