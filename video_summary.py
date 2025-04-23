@@ -25,7 +25,7 @@ def download_youtube_video(youtube_url):
       "-f", "best[ext=mp4]",
       "-o", os.path.join(videos_directory, "%(title)s.%(ext)s"),
       youtube-url
-    ];
+    ]:
     capture_output=True,
     text=True
 )
