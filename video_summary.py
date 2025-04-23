@@ -128,19 +128,19 @@ if uploaded_file:
 if "summary" in st.session_state:
     col1, col2 = st.columns(2)
 
-with col1:
-  if st.button(" Rewrite Summary Nicely"):
-    with st.spinner("Rewriting summary...."):
-      rewritten = rewrite_summary(st.session_state["summary"])
-      st.markdown("### Rewritten Summary:")
-      st.markdown(rewritten)
+    with col1:
+      if st.button(" Rewrite Summary Nicely"):
+         with st.spinner("Rewriting summary...."):
+            rewritten = rewrite_summary(st.session_state["summary"])
+            st.markdown("### Rewritten Summary:")
+            st.markdown(rewritten)
 
-with col2:
-  if st.button(" Create a story from summary"):
-    with st.spinner("Creating story...."):
-      story = turn_into_story(st.session_state["summary"])
-      st.markdown("### Cinematic Story:")
-      st.markdown(story)
+    with col2:
+      if st.button(" Create a story from summary"):
+         with st.spinner("Creating story...."):
+            story = turn_into_story(st.session_state["summary"])
+            st.markdown("### Cinematic Story:")
+            st.markdown(story)
   
 
 
